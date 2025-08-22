@@ -42,14 +42,22 @@ const Hero = () => {
           <div className="flex flex-col md:flex-row min-h-[500px]">
             {/* Left Panel - Branding */}
             <div className="md:w-1/2 bg-gradient-to-br from-blue-600 to-blue-700 p-8 flex flex-col items-center justify-center text-white relative">
-             {/* Logo */}
+            {/* Logo */}
 <div className="mb-8">
   <div className="mb-4 flex items-center justify-center">
-    <img 
-      src="Images/logo.jpeg"   // make sure your logo.jpeg is inside the /public folder
-      alt="TradeConnect Logo" 
-      className="w-20 h-20 object-contain"
-    />
+    {/* Circle background with white background */}
+    <div className="w-28 h-28 rounded-full bg-white flex items-center justify-center shadow-lg">
+      {/* Spinning logo with enhanced animation */}
+      <img 
+        src="/Images/logo.jpeg"   // make sure it's inside /public/Images
+        alt="TradeConnect Logo" 
+        className="w-20 h-20 object-contain rounded-full"
+        style={{ 
+          animation: "spin 3s linear infinite",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+        }}
+      />
+    </div>
   </div>
   <h1 className="text-3xl font-bold text-center">TradeConnect</h1>
 </div>
@@ -162,7 +170,7 @@ const Hero = () => {
                     <span className="text-sm text-gray-600">
                       Don't have an account?{' '}
                       <a
-                        href="#"
+                        href="/Register"
                         className="text-blue-600 hover:text-blue-500 transition-colors font-medium"
                       >
                         Sign Up
@@ -175,6 +183,18 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Add CSS for the spin animation */}
+      <style jsx>{`
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -10,13 +10,21 @@ const Navbar = () => {
 
       {/* Navigation Links */}
       <div className="flex space-x-6 items-center">
-        <button className="bg-[#4a6fa5] text-white font-semibold px-4 py-1 rounded">
+        {/* Scroll to Hero */}
+        <a
+          href="/Hero"
+          className="bg-[#4a6fa5] text-white font-semibold px-4 py-1 rounded"
+        >
           Login
-        </button>
-        <a href="#" className="text-white hover:underline">
+        </a>
+
+        {/* Scroll to Register section */}
+        <a href="/Register" className="text-white hover:underline">
           Sign Up
         </a>
-        <a href="#" className="text-white hover:underline">
+
+        {/* Scroll to Forgot Password section */}
+        <a href="/Forgetpass" className="text-white hover:underline">
           Forgot Password
         </a>
       </div>
